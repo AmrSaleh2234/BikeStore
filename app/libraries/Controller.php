@@ -20,10 +20,10 @@
         public function model($model)
         {
             //Required model file
-            echo '<br'.$model.'<br>';
-           $modelName='MVCPHP\models\\'.$model;//this is class name model with namespace
+           // echo '<br'.$model.'<br>';
+          //$modelName='MVCPHP\models\\'.$model;//this is class name model with namespace
             //Instatiate model
-            return new $modelName();
+            return CreateModel::create($model) ;
         }
 
         /**
@@ -39,15 +39,6 @@
         {
             //check view file
            // echo '..'.DS.'app'.DS.'views'.DS.$view.'.php' ;
-            if(file_exists('..'.DS.'app'.DS.'views'.DS.$view.'.php' ))
-            {
-                require_once '..'.DS.'app'.DS.'views'.DS.$view.'.php';
-            }
-            else
-            {
-                //view does not exist
-                die('view is not exists');
-
-            }
+            CreateView::create($view,$data);
         }
     }
