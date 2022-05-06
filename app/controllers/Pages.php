@@ -20,9 +20,10 @@ class Pages extends Controller
      * <b>index</b>view all product in view /pages/index
      */
     public function index() {
+      //echo "hello world";
         $data = [
             'products' => $this->userModel->getAllProducts()
         ];
-        $this->view('pages\index', $data);
+        $this->view('pages'.DS.'index', $data);
     }
 }

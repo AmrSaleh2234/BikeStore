@@ -19,7 +19,7 @@ class Database
      private $error;
      public function __construct()
      {
-         $dsn ='mysql:host='.$this->host.';dbname='.$this->dbname;
+         $dsn ='mysql:host='.$this->host.';port=3308'.';dbname='.$this->dbname;
          $options =array(
              \PDO::ATTR_PERSISTENT=>true,
              \PDO::ATTR_ERRMODE=> \PDO::ERRMODE_EXCEPTION
@@ -97,7 +97,7 @@ class Database
             $query.=' ORDER BY '.$order;
         }
         $this->query($query);
-            echo $query;
+         //   echo $query;
 
        return $this->resultSet();
 
@@ -114,7 +114,7 @@ class Database
         }
         $value=implode(',',$value);
         $insert.=' VALUES ('.$value.')';
-        echo $insert.'<br>';
+      //  echo $insert.'<br>';
 
 
        return $this->dbh->exec($insert);
@@ -173,7 +173,7 @@ class Database
             }
         }
         $update .= ' WHERE '.$where;
-        echo $update;
+       // echo $update;
         return $this->dbh->exec($update);
 
     }

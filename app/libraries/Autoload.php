@@ -21,11 +21,11 @@ class  Autoload
      */
     public static function  autoload($className)
     {
-       echo $className.'<br>';
+       //echo $className.'<br>';
         $className=str_replace('MVCPHP','',$className);   // class name is MVCPHP\folder\class= file name without .php
 
         $className.='.php';  //add  .php
-        echo APPROOT.$className.'<br>';
+       // echo APPROOT.$className.'<br>';
 
         if(!file_exists(APPROOT.$className))
         {

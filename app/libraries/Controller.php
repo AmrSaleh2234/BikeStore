@@ -38,7 +38,7 @@
         public function view($view,$data=[])
         {
             //check view file
-            echo '..'.DS.'app'.DS.'views'.DS.$view.'.php' ;
+           // echo '..'.DS.'app'.DS.'views'.DS.$view.'.php' ;
             if(file_exists('..'.DS.'app'.DS.'views'.DS.$view.'.php' ))
             {
                 require_once '..'.DS.'app'.DS.'views'.DS.$view.'.php';
